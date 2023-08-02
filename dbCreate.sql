@@ -1,5 +1,5 @@
-﻿Create Database If Not exists NonNonDB;
-use nonnondb;
+﻿Create Database If Not exists NomNomDB;
+use nomnomdb;
 
 
 create table if not exists Users(
