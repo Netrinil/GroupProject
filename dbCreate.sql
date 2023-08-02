@@ -1,6 +1,8 @@
-﻿use  MyTestDb;
+﻿Create Database If Not exists NomNomDB;
+use nomnomdb;
 
-create table if not exists MyUsers(
+
+create table if not exists Users(
  id int not null AUTO_INCREMENT PRIMARY KEY,
  First_Name varchar(25) Not null,
  Last_Name varchar(25) Not null,
@@ -11,14 +13,12 @@ create table if not exists MyUsers(
 );
 
 
-create table if not exists MyWebDocs(
+create table if not exists Recipes(
  id int not null AUTO_INCREMENT PRIMARY KEY,
  Title varchar(25) Not null,
--- Category varchar(25),
+ Category varchar(25),
  Header1 varchar(25),
  Text1 varchar(225),
- ParentPage int DEFAULT 0,
- SortOrder int DEFAULT 2,
  isActive int
 );
 
@@ -83,7 +83,4 @@ INSERT INTO MyWebDocs ( id, Title, Header1, Text1, ParentPage, SortOrder, isActi
 VALUES    (8, 'Something 2', 'Sub Header number 2', 'My text, asfaf af af af a sag asf saf', 2, 4, 1)
 ON DUPLICATE KEY UPDATE
 Title = 'Something 2', Header1 = 'Sub Header number 2', Text1 = 'My text, asfaf af af af a sag asf saf', ParentPage = 2, SortOrder = 4, isActive = 1;
-
-
-
 
