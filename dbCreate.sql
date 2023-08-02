@@ -1,5 +1,5 @@
-﻿Create Database If Not exists NomNomDB;
-use nomnomdb;
+﻿Create Database If Not exists NonNonDB;
+use nonnondb;
 
 
 create table if not exists Users(
@@ -16,9 +16,10 @@ create table if not exists Users(
 create table if not exists Recipes(
  id int not null AUTO_INCREMENT PRIMARY KEY,
  Title varchar(25) Not null,
- Category varchar(25),
+ -- Category varchar(25),
  Header1 varchar(25),
  Text1 varchar(225),
+ ParentPage int DEFAULT 0,
  isActive int
 );
 
