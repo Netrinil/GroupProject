@@ -6,14 +6,20 @@ include_once "MyHeader.php";
 
 ?>
 
-Add code (form) to login.
-<br />
-<br />
-You do not need to "wire-up" a database. 
-<br />
-You could have two buttons that change the session value for an admin/user
+<h1>User Login</h1>
+<br/>
+<br/>
+<form method="post" id='form'>
+    <label>Username</label>
+    <input type='text' name='userId'/>
+    <br/>
+    <label>Password</label>
+    <input type='password' name='password'/> 
 
+</form>
+<script>
+</script>
 <?php
-include_once "MyHeader.php";
+include_once "MyFooter.php";
 ?>
 
