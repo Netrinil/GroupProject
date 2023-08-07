@@ -46,25 +46,25 @@ First_Name = 'Makayla', Last_Name = 'Pollard', UserId = 'MPollard', Pswd = 'd', 
 
 -- --------------------------------------
 -- Main links/pages
-INSERT INTO pages ( id, Title, Header1, Text1, ParentPage ,isActive)
-VALUES    (1, 'Nom Noms', 'Home', 'Welcome to our website. Grab a bite and enjoy.', null, 1)
+INSERT INTO pages ( id, Title, Header1, Text1,  isActive)
+VALUES    (1, 'Nom Noms', 'Home', 'Welcome to our website. Grab a bite and enjoy.', 1)
 ON DUPLICATE KEY UPDATE
-Title = 'Nom Noms', Header1 = 'Home', Text1 = 'Welcome to our website. Grab a bite and enjoy.', ParentPage = null,  isActive = 1;
+Title = 'Nom Noms', Header1 = 'Home', Text1 = 'Welcome to our website. Grab a bite and enjoy.',  isActive = 1;
 
-INSERT INTO pages ( id, Title, Header1, Text1, ParentPage , isActive)
-VALUES    (2, 'About', 'About Us', 'Zero score and 1 month ago, we were set upon by the reality of PHP. Now, our foe lies beneath us, broken and beaten, and lo, here we stand today to say “Let’s get this bread.”', null, 1)
+INSERT INTO pages ( id, Title, Header1, Text1, isActive)
+VALUES    (2, 'About', 'About Us', 'Zero score and 1 month ago, we were set upon by the reality of PHP. Now, our foe lies beneath us, broken and beaten, and lo, here we stand today to say “Let’s get this bread.”',  1)
 ON DUPLICATE KEY UPDATE
-Title = 'About', Header1 = 'About Us', Text1 = 'Zero score and 1 month ago, we were set upon by the reality of PHP. Now, our foe lies beneath us, broken and beaten, and lo, here we stand today to say “Let’s get this bread.”', ParentPage = null, isActive = 1;
+Title = 'About', Header1 = 'About Us', Text1 = 'Zero score and 1 month ago, we were set upon by the reality of PHP. Now, our foe lies beneath us, broken and beaten, and lo, here we stand today to say “Let’s get this bread.”', isActive = 1;
 
-INSERT INTO pages ( id, Title, Header1, Text1, ParentPage ,  isActive)
-VALUES    (3, 'Recipe Category', 'Recipe links list', 'Recipe', null, 1)
+INSERT INTO pages ( id, Title, Header1, Text1,   isActive)
+VALUES    (3, 'Recipe Category', 'Recipe links list', 'Recipe',  1)
 ON DUPLICATE KEY UPDATE
-Title = 'Recipe Category', Header1 = 'Recipe links list', Text1 = 'Recipe', ParentPage = null, isActive = 1;
+Title = 'Recipe Category', Header1 = 'Recipe links list', Text1 = 'Recipe',  isActive = 1;
 
-INSERT INTO pages ( id, Title, Header1, Text1, ParentPage , isActive)
-VALUES    (4, 'Contact Us', 'Contact Info', 'support@nom.nom 800-366-4484 178 S Rio Grande St, Salt Lake City, UT 84101', null, 1)
+INSERT INTO pages ( id, Title, Header1, Text1,  isActive)
+VALUES    (4, 'Contact Us', 'Contact Info', 'support@nom.nom 800-366-4484 178 S Rio Grande St, Salt Lake City, UT 84101',  1)
 ON DUPLICATE KEY UPDATE
-Title = 'Contact Us', Header1 = 'Contact Info', Text1 = 'support@nom.nom 800-366-4484 178 S Rio Grande St, Salt Lake City, UT 84101', ParentPage = null, isActive = 1;
+Title = 'Contact Us', Header1 = 'Contact Info', Text1 = 'support@nom.nom 800-366-4484 178 S Rio Grande St, Salt Lake City, UT 84101',  isActive = 1;
 
 -- ---------------------
 -- Sub pages
