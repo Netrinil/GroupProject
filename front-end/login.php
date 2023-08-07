@@ -1,8 +1,6 @@
 <?php
 include_once "MyHeader.php";
 
-// Use this page to change the value of
-// $_SESSION["isAdmin"] or such
 
 ?>
 <?php
@@ -24,7 +22,6 @@ include_once "MyHeader.php";
         };
 
     }
-    echo ($_SESSION["isAdmin"]);
 
 
 ?>
