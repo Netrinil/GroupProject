@@ -35,12 +35,12 @@ ON DUPLICATE KEY UPDATE
 First_Name = 'David', Last_Name = 'Brockmeyer', UserId = 'dBrock', Pswd = 'b', isAdmin = 0, isActive = 1;
 
 INSERT INTO users ( id, First_Name, Last_Name, UserId, Pswd, isAdmin, isActive)
-VALUES    (2, 'Sakura', 'Brockmeyer', 'SBrock', 'c', 1, 1)
+VALUES    (3,'Sakura', 'Brockmeyer', 'SBrock', 'c', 1, 1)
 ON DUPLICATE KEY UPDATE
 First_Name = 'Sakura', Last_Name = 'Brockmeyer', UserId = 'SBrock', Pswd = 'c', isAdmin = 1, isActive = 1;
 
 INSERT INTO users ( id, First_Name, Last_Name, UserId, Pswd, isAdmin, isActive)
-VALUES    (2, 'Makayla', 'Pollard', 'MPollard', 'd', 0, 1)
+VALUES    (4, 'Makayla', 'Pollard', 'MPollard', 'd', 0, 1)
 ON DUPLICATE KEY UPDATE
 First_Name = 'Makayla', Last_Name = 'Pollard', UserId = 'MPollard', Pswd = 'd', isAdmin = 0, isActive = 1;
 
