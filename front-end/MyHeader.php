@@ -84,7 +84,7 @@ mysqli_free_result($recordset);
 <?php
 
 // Add a Admin link if. . . 
-$_SESSION["isAdmin"] = 1; // Cheat - Do not do this in your code. 
+//$_SESSION["isAdmin"] = 0; // Cheat - Do not do this in your code. 
 if ($_SESSION["isAdmin"] == 1) {
     echo '  &nbsp; &nbsp;<a href="recipeAdd.php">Add Recipe</a>';
 }
