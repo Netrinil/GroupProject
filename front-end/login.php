@@ -12,17 +12,18 @@ include_once "MyHeader.php";
         $query = 'SELECT * FROM Users where userId = "' . $userId . '" and Pswd = "' . $password . '"';
         $results = mysqli_query($conn, $query);
         $result = $results->fetch_array()[0] ?? '';
-
+        $isAdmin = $results->fetch_array()['isAdmin'] ?? '';
         if($result == "" || $result == null){
-        $_SESSION["isAdmin"] = 0;
+
         echo ('<script>alert("Try Again")</script>');
         }else{
-        $_SESSION["isAdmin"] = 1;
-        header("Location: http://localhost:62530/front-end/index.php");
+            $_SESSION["isAdmin"] = 1;
+            header("location: http://localhost:62530/front-end/index.php");
         };
 
-    }
 
+    }
+    echo($result)
 
 ?>
 
