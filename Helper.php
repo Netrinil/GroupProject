@@ -36,6 +36,20 @@ function PageDisplay($PageData) {
     }
 
 }
+// //////////////////
+function GetCategoryId($PageData) {
+    if ($PageData) {
+        $row = mysqli_fetch_array($PageData);
 
+        return $row['Header1'];
+    } // End if
+    else {
+        echo "No Page data to display <br />";
+    }
+}
+
+function AddRecipe($title, $header , $text, $parent) {
+    
+}
 
 ?>
