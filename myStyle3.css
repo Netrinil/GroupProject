@@ -1,2 +1,30 @@
 ﻿body {
+    background-color: #0A1128;
+    color: #FEFCFB;
+    padding: 10px;
+    margin: 10px;
 }
+
+a {
+    color: #1282A2;
+}
+
+    a:hover {
+        cursor: pointer;
+        color: #FEFCFB;
+    }
+
+input {
+    margin-bottom: 5px;
+}
+
+button {
+    margin-top: 5px;
+}
+/*
+    #0A1128
+    #001F54
+    #034078
+    #1282A2
+    #FEFCFB
+*/
