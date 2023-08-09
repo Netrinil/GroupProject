@@ -91,6 +91,12 @@ function MyPageCreate($dbConn, $title, $header, $text, $parent)
 
     return @mysqli_query($dbConn, $query);
 }
+function MyPageUpdate($dbConn, $id, $title, $header, $text, $parent, $active)
+{
+    $query = "UPDATE Pages SET Title = '" . $title . "', Header1 = '" . $header . "', Text1 = '" . $text . "', ParentPage = " . $parent . ", isActive = " . $active . " WHERE id = " . $id . ";";
+
+    return @mysqli_query($dbConn, $query);
+}
 
 
 ?>

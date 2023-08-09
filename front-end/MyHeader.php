@@ -8,8 +8,6 @@ include_once "../Helper.php";
 
 <?php 
 
-$myStyle = "1";
-
 // Check for Priv setting
 if (isset($_SESSION["isAdmin"]) == false) {
     $_SESSION["isAdmin"] = 0; // Set default
@@ -21,7 +19,7 @@ if (isset($_COOKIE["MyStyle"]) == true) {
 else
 {
     // Set default style
-    $_COOKIE["MyStyle"] = $myStyle;
+    $_COOKIE["MyStyle"] = "1";
 }
 
 $myTitle = "NomNom";
@@ -89,6 +87,7 @@ if ($_SESSION["isAdmin"] == 1) {
     echo '  &nbsp; &nbsp;<a href="pageAdd.php">Add Page</a>';
     echo '  &nbsp; &nbsp;<a href="pageRemove.php">Remove Page</a>';
     echo '  &nbsp; &nbsp;<a href="pageRestore.php">Restore Page</a>';
+    echo '  &nbsp; &nbsp;<a href="pageUpdate.php">Update Page</a>';
     echo '  &nbsp; &nbsp;<a href="logout.php">Logout</a>';
 }
 else {
