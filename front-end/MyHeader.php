@@ -77,7 +77,7 @@ mysqli_free_result($recordset);
 
 ?>
     <!-- Add a link for the custom settings -->
-    &nbsp; &nbsp;<a href="../Preferences.php">My Preferences </a>
+    &nbsp; &nbsp;<a href="Preferences.php">My Preferences </a>
 
 <?php
 

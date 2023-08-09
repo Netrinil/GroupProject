@@ -7,7 +7,7 @@ include_once "MyHeader.php";
     Page Id: &nbsp;<input type="text" id="pageId" value="9" placeholder="9" /><br />
 
 </div>
-<button name="a" onclick="myRemoveEvent()">Add</button>
+<button name="a" onclick="myRemoveEvent()">Remove</button>
 <p id="debugA"></p>
 <p id="debugB"></p>
 <p id="debugC"></p>

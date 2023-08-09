@@ -24,7 +24,6 @@ if (isset($_POST['submit'])) {
     <input type="submit" id="submit" name="submit" value="submit" />
 
 </form>
-<script></script>
 
 <?php
 include_once "MyFooter.php";

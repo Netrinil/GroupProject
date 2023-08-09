@@ -11,7 +11,7 @@ include_once "MyHeader.php";
     Page is active: &nbsp;<input type="text" id="pageActive" value="" placeholder="0 or 1" /><br />
 
 </div>
-<button name="a" onclick="myEditEvent()">Add</button>
+<button name="a" onclick="myEditEvent()">Update</button>
 <p id="debugA"></p>
 <p id="debugB"></p>
 <p id="debugC"></p>
