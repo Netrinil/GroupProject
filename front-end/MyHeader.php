@@ -89,23 +89,10 @@ if ($_SESSION["isAdmin"] == 1) {
     echo '  &nbsp; &nbsp;<a href="pageAdd.php">Add Page</a>';
     echo '  &nbsp; &nbsp;<a href="pageRemove.php">Remove Page</a>';
     echo '  &nbsp; &nbsp;<a href="pageRestore.php">Restore Page</a>';
-}
-else {
-    echo '  &nbsp; &nbsp;<a href="Login.php">Login</a>';
-}
-
-
-?>
-
-    <?php
-
-// Add a Admin link if. . . 
-//$_SESSION["isAdmin"] = 0; // Cheat - Do not do this in your code. 
-if ($_SESSION["isAdmin"] == 1) {
     echo '  &nbsp; &nbsp;<a href="logout.php">Logout</a>';
 }
 else {
-    echo '';
+    echo '  &nbsp; &nbsp;<a href="Login.php">Login</a>';
 }
 
 
