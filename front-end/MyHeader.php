@@ -24,8 +24,8 @@ else
     $_COOKIE["MyStyle"] = $myStyle;
 }
 
-$myTitle = "my title";
-$MyHeader = "My Header";
+$myTitle = "NomNom";
+$MyHeader = "Home";
 
 ?>
 <!DOCTYPE html>
@@ -79,7 +79,7 @@ mysqli_free_result($recordset);
 
 ?>
     <!-- Add a link for the custom settings -->
-    &nbsp; &nbsp;<a href="Preferences.php">My Preferences </a>
+    &nbsp; &nbsp;<a href="../Preferences.php">My Preferences </a>
 
 <?php
 

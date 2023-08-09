@@ -43,6 +43,23 @@ function PageContentGet($dbConn, $Id) {
 return $return;
 }
 
+function PageContentGetByTitle($dbConn, $Title)
+{
+    $return = null;
+
+    $query = "SELECT id, Title, Header1, Text1 FROM Pages where isActive = 1 and Title = '" . $Title . "';";
+    $return = @mysqli_query($dbConn, $query);
+
+    if ((!$return) || ($return->num_rows < 1)) {
+        // return a defaul fault page
+        $query = "SELECT id, Title, Header1, Text1 FROM Pages where isActive = 1 order by Title asc limit 1;";
+
+        $return = @mysqli_query($dbConn, $query);
+    }
+
+    return $return;
+}
+
 // ///////////////////////////////////////////////////
 // Get all the page records
 function MyPageRemove($dbConn, $Id) {

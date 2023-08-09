@@ -1,17 +1,19 @@
 <?php
-// include_once "dbConnector.php";
+include_once "back-end/dbConnector.php";
 ?>
 
 <?php
 // //////////////////////////////////////////////////
-function MenuDisplay($dataset) {
+function MenuDisplay($dataset)
+{
+    $myDbConn = ConnGet();
 
-// &nbsp; &nbsp;<a href="ContactUs.php">
+    // &nbsp; &nbsp;<a href="ContactUs.php">
 
-    if ($dataset){
+    if ($dataset) {
         // per.Fname, per.Lname, cel.Cell_Id, cel.CellNumber
-        while($row = mysqli_fetch_array($dataset)){
-            echo ' &nbsp; &nbsp; <a href="Index.php?PageId=' . $row['id'] .  '" >' . $row['Title'] . '</a>';
+        while ($row = mysqli_fetch_array($dataset)) {
+            echo ' &nbsp; &nbsp; <a href="Index.php?PageId=' . $row['id'] . '" >' . $row['Title'] . '</a>';
         }
     } // End if
     else {
@@ -21,14 +23,15 @@ function MenuDisplay($dataset) {
 
 }
 // /////////////////
-function PageDisplay($PageData) {
+function PageDisplay($PageData)
+{
 
-    if ($PageData){
+    if ($PageData) {
         // per.Fname, per.Lname, cel.Cell_Id, cel.CellNumber
         $row = mysqli_fetch_array($PageData);
 
-        echo ' &nbsp; &nbsp; <h2> ' . $row['Header1'] .  ' </h2> <br />';
-        echo ' &nbsp; &nbsp; <p> ' . $row['Text1'] .  '</p> <br />';
+        echo ' &nbsp; &nbsp; <h2> ' . $row['Header1'] . ' </h2> <br />';
+        echo ' &nbsp; &nbsp; <p> ' . $row['Text1'] . '</p> <br />';
 
     } // End if
     else {
@@ -37,19 +40,23 @@ function PageDisplay($PageData) {
 
 }
 // //////////////////
-function GetCategoryId($PageData) {
-    if ($PageData) {
-        $row = mysqli_fetch_array($PageData);
+function GetCategoryId($Category)
+{
+    $myDbConn = ConnGet();
+    if ($Category) {
+        $data = PageContentGetByTitle($myDbConn, $Category);
+        $result = mysqli_fetch_array($data);
 
-        return $row['Header1'];
+        return $result['id'];
     } // End if
     else {
         echo "No Page data to display <br />";
     }
 }
 
-function AddRecipe($title, $header , $text, $parent) {
-    
+function AddRecipe($title, $header, $text, $parent)
+{
+
 }
 
 ?>

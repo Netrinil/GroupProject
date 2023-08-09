@@ -16,30 +16,32 @@ include_once "MyHeader.php";
 <p id="jsonData" style="text-align:center"></p>
 
 <script>
-    var request = new XMLHttpRequest();
+    $request = new XMLHttpRequest();
 
     // Don't run until the page is loaded and ready
     $(document).ready(function () {
-    //alert("Ready");
+        // alert("Ready");
     });
 
     function myAddEvent() {
         //alert("my click"); // Use for debugging
-        //alert("data: " + document.getElementById("recipeTitle").value); // Use for debugging
         $title = document.getElementById("recipeTitle").value;
         $header = document.getElementById("recipeHeader").value;
         $text = document.getElementById("recipeText").value;
-        $parent = <?php GetCategoryId( ?> $header <?php ); ?>
+        //alert("title: " + $title); // Use for debugging
+        //alert("header: " + $header); // Use for debugging
+        //alert("text: " + $text); // Use for debugging
 
-        loadJson($title, $header, $text, $parent);
+        loadJson($title, $header, $text);
     }
 
     // Call the microservice and get the data
-    function loadJson(title, header, text, parent) {
-        //alert("title: " + title); // Use for debugging
-        request.open('POST', '../Helper.php?recipeTitle=' + title + '&recipeHeader=' + header + '&recipeText=' + text + '&recipeParent=' + parent);
-        request.onload = loadComplete;
-        request.send();
+    function loadJson(title, header, text) {
+        //alert("loading"); // Use for debugging
+        $request.open('POST', '../back-end/apiAddQuery.php?recipeTitle=' + title + '&recipeHeader=' + header + '&recipeText=' + text);
+        //alert("query called"); // Use for debugging
+        // $request.onload = loadComplete;
+        $request.send();
     }
 </script>
 
