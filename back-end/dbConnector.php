@@ -13,7 +13,7 @@ function ConnGet() {
 // ///////////////////////////////////////////////////
 // Get Select records based on the Parent Id
 function MyPagesGet($dbConn, $Parent=0) {
-    $query = "SELECT id, Title, Header1, Text1 FROM Pages where isActive = 1 and ParentPage = " . $Parent . " order by Title asc;";
+    $query = "SELECT id, Title, Header1, Text1 FROM Pages where isActive = 1 and ParentPage = " . $Parent . ";";
     // SELECT id, Title, Header1, Text1 FROM Pages where isActive = 1 and ParentPage = " . $Parent . " order by ParentPage asc, SortOrder Asc;
 
     return @mysqli_query($dbConn, $query);
@@ -21,7 +21,15 @@ function MyPagesGet($dbConn, $Parent=0) {
 // ///////////////////////////////////////////////////
 // Get all the page records
 function MyPagesAllGet($dbConn) {
-    $query = "SELECT id, Title, Header1, Text1, ParentPage, isActive FROM Pages order by ParentPage asc, Title Asc;";
+    $query = "SELECT id, Title, Header1, Text1, ParentPage, isActive FROM Pages order by ParentPage asc;";
+
+    return @mysqli_query($dbConn, $query);
+}
+// ///////////////////////////////////////////////////
+// Get all the page records
+function MyRecipesAllGet($dbConn)
+{
+    $query = "SELECT id, Title, Header1, Text1, ParentPage, isActive FROM Pages where isActive = 1 and ParentPage != 0 and ParentPage != 3 order by ParentPage asc;";
 
     return @mysqli_query($dbConn, $query);
 }
@@ -35,7 +43,7 @@ function PageContentGet($dbConn, $Id) {
 
     if ((!$return) || ($return->num_rows < 1)){
         // return a defaul fault page
-        $query = "SELECT id, Title, Header1, Text1 FROM Pages where isActive = 1 order by Title asc limit 1;";
+        $query = "SELECT id, Title, Header1, Text1 FROM Pages where isActive = 1 limit 1;";
 
         $return = @mysqli_query($dbConn, $query);
     }
@@ -52,7 +60,7 @@ function PageContentGetByTitle($dbConn, $Title)
 
     if ((!$return) || ($return->num_rows < 1)) {
         // return a defaul fault page
-        $query = "SELECT id, Title, Header1, Text1 FROM Pages where isActive = 1 order by Title asc limit 1;";
+        $query = "SELECT id, Title, Header1, Text1 FROM Pages where isActive = 1 limit 1;";
 
         $return = @mysqli_query($dbConn, $query);
     }
@@ -65,14 +73,14 @@ function PageContentGetByTitle($dbConn, $Title)
 function MyPageRemove($dbConn, $Id) {
 
     // Never delete a page. set it to incative
-    $query = "Update FROM Pages set isActive = 0 where id = " . $Id;
+    $query = "Update Pages set isActive = 0 where id = " . $Id;
 
     return @mysqli_query($dbConn, $query);
 }
 function MyPageRestore($dbConn, $Id)
 {
 
-    $query = "Update FROM Pages set isActive = 1 where id = " . $Id;
+    $query = "Update Pages set isActive = 1 where id = " . $Id;
 
     return @mysqli_query($dbConn, $query);
 }

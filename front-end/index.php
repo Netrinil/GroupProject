@@ -4,7 +4,7 @@ include_once "MyHeader.php";
 
 <?php
 // Move to Index
-$PageId = "0";
+$PageId = "1";
 // Get the page parameter
 if (array_key_exists("PageId", $_GET) == true) {
     $PageId = $_GET["PageId"];
@@ -23,15 +23,19 @@ mysqli_free_result($PageData);
 // Display sub page links
 
 $SubPages = MyPagesGet($myDbConn, $PageId);
-if (($PageId != "0") && ($SubPages) && ($SubPages->num_rows > 0)) {
+if (($PageId != "1") && ($SubPages) && ($SubPages->num_rows > 0)) {
     echo "Sub page links: ";
     // Display the main menu
     MenuDisplay($SubPages);
     mysqli_free_result($SubPages);
 }
-else
+else if ($PageId == "1")
 {
-    echo "<br /> Welcome. . . Click a menu link";
+    $SubPages = MyRecipesAllGet($myDbConn);
+    echo "Recipe links: ";
+    // Display the main menu
+    MenuDisplay($SubPages);
+    mysqli_free_result($SubPages);
 }
 
 ?>

@@ -7,13 +7,20 @@ header('Content-Type: application/json');
 // Get the db connection
 // Get the data
 $myDbConn = ConnGet();
-$title = $_GET["recipeTitle"];
-$header = $_GET["recipeHeader"];
-$text = $_GET["recipeText"];
-$parent = GetCategoryId($header);
+$title = $_GET["pageTitle"];
+$header = $_GET["pageHeader"];
+$text = $_GET["pageText"];
+if ($title == $header)
+{
+    $parent = 3;
+}
+else
+{
+    $parent = GetCategoryId($header);
+}
 
 // Get the records
-$dataSet = MyPageCreate($myDbConn, $_GET["recipeTitle"], $_GET["recipeHeader"], $_GET["recipeText"], $parent);
+$dataSet = MyPageCreate($myDbConn, $title, $header, $text, $parent);
 
 mysqli_close($myDbConn);
 

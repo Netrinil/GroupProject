@@ -25,7 +25,7 @@ else
 }
 
 $myTitle = "NomNom";
-$MyHeader = "Home";
+$MyHeader = "NomNom";
 
 ?>
 <!DOCTYPE html>
@@ -86,7 +86,9 @@ mysqli_free_result($recordset);
 // Add a Admin link if. . . 
 //$_SESSION["isAdmin"] = 0; // Cheat - Do not do this in your code. 
 if ($_SESSION["isAdmin"] == 1) {
-    echo '  &nbsp; &nbsp;<a href="recipeAdd.php">Add Recipe</a>';
+    echo '  &nbsp; &nbsp;<a href="pageAdd.php">Add Page</a>';
+    echo '  &nbsp; &nbsp;<a href="pageRemove.php">Remove Page</a>';
+    echo '  &nbsp; &nbsp;<a href="pageRestore.php">Restore Page</a>';
 }
 else {
     echo '  &nbsp; &nbsp;<a href="Login.php">Login</a>';
