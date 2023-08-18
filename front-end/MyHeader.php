@@ -6,7 +6,7 @@ include_once "../Helper.php";
 
 ?>
 
-<?php 
+<?php
 
 // Check for Priv setting
 if (isset($_SESSION["isAdmin"]) == false) {
@@ -15,9 +15,7 @@ if (isset($_SESSION["isAdmin"]) == false) {
 // Check for style setting
 if (isset($_COOKIE["MyStyle"]) == true) {
     $myStyle = $_COOKIE["MyStyle"];
-}
-else
-{
+} else {
     // Set default style
     $_COOKIE["MyStyle"] = "1";
 }
@@ -70,7 +68,7 @@ $MyHeader = "NomNom";
 $myDbConn = ConnGet();
 
 // $recordset = MyPagesAllGet($myDbConn); 
-$recordset = MyPagesGet($myDbConn, 0); 
+$recordset = MyPagesGet($myDbConn, 0);
 // Display the main menu
 MenuDisplay($recordset);
 mysqli_free_result($recordset);
@@ -83,14 +81,16 @@ mysqli_free_result($recordset);
 
 // Add a Admin link if. . . 
 //$_SESSION["isAdmin"] = 0; // Cheat - Do not do this in your code. 
-if ($_SESSION["isAdmin"] == 1) {
+
+if ($_SESSION["userID"] > 0) {
     echo '  &nbsp; &nbsp;<a href="pageAdd.php">Add Page</a>';
-    echo '  &nbsp; &nbsp;<a href="pageRemove.php">Remove Page</a>';
-    echo '  &nbsp; &nbsp;<a href="pageRestore.php">Restore Page</a>';
-    echo '  &nbsp; &nbsp;<a href="pageUpdate.php">Update Page</a>';
+    if ($_SESSION["isAdmin"] == 1) {
+        echo '  &nbsp; &nbsp;<a href="pageRemove.php">Remove Page</a>';
+        echo '  &nbsp; &nbsp;<a href="pageRestore.php">Restore Page</a>';
+        echo '  &nbsp; &nbsp;<a href="pageUpdate.php">Update Page</a>';
+    }
     echo '  &nbsp; &nbsp;<a href="logout.php">Logout</a>';
-}
-else {
+} else {
     echo '  &nbsp; &nbsp;<a href="Login.php">Login</a>';
 }
 

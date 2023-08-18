@@ -27,9 +27,9 @@ function MyPagesAllGet($dbConn) {
 }
 // ///////////////////////////////////////////////////
 // Get all the page records
-function MyRecipesAllGet($dbConn)
+function MyRecipesAllGet($dbConn, $userID)
 {
-    $query = "SELECT id, Title, Header1, Text1, ParentPage, isActive FROM Pages where isActive = 1 and ParentPage != 0 and ParentPage != 3 order by ParentPage asc;";
+    $query = "SELECT * FROM Pages where (creator = " . $userID . " or isActive = 1 and requireApproval = 0) and ParentPage != 0 and ParentPage != 3 order by ParentPage asc;";
 
     return @mysqli_query($dbConn, $query);
 }
@@ -84,10 +84,10 @@ function MyPageRestore($dbConn, $Id)
 
     return @mysqli_query($dbConn, $query);
 }
-function MyPageCreate($dbConn, $title, $header, $text, $parent)
+function MyPageCreate($dbConn, $title, $header, $text, $parent, $userID, $isUser)
 {
-    $query = "INSERT INTO Pages (Title, Header1, Text1, ParentPage, isActive)
-                VALUES ('" . $title . "', '" . $header . "', '" . $text . "', " . $parent . ", " . 1 . ");";
+    $query = "INSERT INTO Pages (Title, Header1, Text1, ParentPage, isActive, creator, requireApproval)
+                VALUES ('" . $title . "', '" . $header . "', '" . $text . "', " . $parent . ", " . 1 . ", " . $userID . ", " . $isUser . ");";
 
     return @mysqli_query($dbConn, $query);
 }

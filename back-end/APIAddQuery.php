@@ -20,7 +20,7 @@ else
 }
 
 // Get the records
-$dataSet = MyPageCreate($myDbConn, $title, $header, $text, $parent);
+$dataSet = MyPageCreate($myDbConn, $title, $header, $text, $parent, $_SESSION['userID'], $_SESSION['isAdmin']);
 
 mysqli_close($myDbConn);
 

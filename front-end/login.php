@@ -7,13 +7,15 @@ if (isset($_POST['submit'])) {
     $conn = ConnGet();
     $query = 'SELECT * FROM Users where userId = "' . $userId . '" and Pswd = "' . $password . '"';
     $results = mysqli_query($conn, $query);
-    $result = $results->fetch_array()[0] ?? '';
-    $isAdmin = $results->fetch_array()['isAdmin'] ?? '';
-    if ($result == "" || $result == null) {
+    $result = $results->fetch_array() ?? '';
+    $userID = $result['id'] ?? 0;
+    $isAdmin = $result['isAdmin'] ?? 0;
+    if ($results == "" || $results == null) {
 
         echo ('<script>alert("Try Again")</script>');
     } else {
-        $_SESSION["isAdmin"] = 1;
+        $_SESSION["isAdmin"] = $isAdmin;
+        $_SESSION["userID"] = $userID;
         header("location: http://localhost:62530/front-end/index.php");
     }
     ;

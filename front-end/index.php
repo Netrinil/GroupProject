@@ -31,7 +31,10 @@ if (($PageId != "1") && ($SubPages) && ($SubPages->num_rows > 0)) {
 }
 else if ($PageId == "1")
 {
-    $SubPages = MyRecipesAllGet($myDbConn);
+    if ($_SESSION['userID'] < 1)
+        $SubPages = MyRecipesAllGet($myDbConn, 0);
+    else
+        $SubPages = MyRecipesAllGet($myDbConn, $_SESSION['userID']);
     echo "Recipe links: ";
     // Display the main menu
     MenuDisplay($SubPages);

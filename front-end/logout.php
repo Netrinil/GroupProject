@@ -5,6 +5,7 @@ include_once("MyHeader.php");
 
 <?php
     $_SESSION["isAdmin"] = 0;
+$_SESSION["userID"] = 0;
     header("Location: http://localhost:62530/front-end/index.php");
 ?>
 
