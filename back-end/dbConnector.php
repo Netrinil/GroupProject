@@ -98,6 +98,21 @@ function MyPageUpdate($dbConn, $id, $title, $header, $text, $parent, $active)
     return @mysqli_query($dbConn, $query);
 }
 
+function MyJoinJsonGet($dbConn)
+{
+
+    $query = "SELECT JSON_OBJECT(
+        'Id', id,
+        'First_Name', First_Name,
+        'Last_Name', Last_Name,
+        'UserId', UserId,
+        'isAdmin', isAdmin,
+        'isActive', isActive) as Json1
+        FROM users";
+
+    return @mysqli_query($dbConn, $query);
+}
+
 
 ?>
 

@@ -5,7 +5,7 @@ if (isset($_POST['submit'])) {
     $userId = $_POST['userId'];
     $password = $_POST['password'];
     $conn = ConnGet();
-    $query = 'SELECT * FROM Users where userId = "' . $userId . '" and Pswd = "' . $password . '"';
+    $query = 'SELECT * FROM Users where userId = "' . $userId . '" and Pswd = "' . $password . '" and isActive = 1';
     $results = mysqli_query($conn, $query);
     $result = $results->fetch_array() ?? '';
     $userID = $result['id'] ?? 0;
