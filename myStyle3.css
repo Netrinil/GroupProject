@@ -1,20 +1,29 @@
 ﻿@import url('https://fonts.googleapis.com/css2?family=Handjet&family=Lugrasimo&family=Mochiy+Pop+One&display=swap');
 
 body {
-    background-color: #0A1128;
+    background-color: #293663;
     font-family: 'Handjet', cursive;
-    color: #FEFCFB;
+    font-size:20px;
+    color: #9bb9c2;
     padding: 10px;
     margin: 10px;
 }
 
 a {
-    color: #1282A2;
+    border: #0a1128 3px;
+    border-style:dashed dashed solid dashed;
+    border-radius:3px;
+    padding:5px;
+    margin:5px;
+    color: #bdbdbd;
+    text-decoration:none;
+    background-color:#034078;
 }
 
     a:hover {
         cursor: pointer;
-        color: #FEFCFB;
+        color: #fefcfb;
+        background-color: #1282a2;
     }
 
 input {
@@ -24,6 +33,36 @@ input {
 button {
     margin-top: 5px;
 }
+
+form {
+    border: #0a1128 3px;
+    border-style: dashed dashed solid dashed;
+    border-radius: 3px;
+    padding: 20px;
+    margin: 10px;
+    width: fit-content;
+    text-align: center;
+    background-color: #187894;
+    color: #0a1128;
+}
+
+#submit {
+    border: #0a1128 3px;
+    border-style: dashed dashed solid dashed;
+    border-radius: 3px;
+    margin-top: 5px;
+    border-radius: 4px;
+    font-family: 'Handjet', cursive;
+    font-size: 16px;
+    color: #bdbdbd;
+    background-color: #034078;
+}
+
+    #submit:hover {
+        cursor: pointer;
+        color: #fefcfb;
+        background-color: #15a9d4;
+    }
 /*
     #0A1128
     #001F54

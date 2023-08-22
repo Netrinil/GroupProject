@@ -5,24 +5,59 @@ body {
     font-family: 'Lugrasimo', cursive;
     padding: 10px;
     margin: 10px;
+    color:#2a0800;
 }
 
 a {
-    color: #2A0800;
+    color: #000;
+    text-decoration: none;
+    border: double #2a0800 5px;
+    padding: 5px;
+    margin: 5px;
+    background-color: #9c7162;
+    border-radius: 5px;
 }
 
     a:hover {
         cursor: pointer;
-        color: #775144;
+        color: #2a0800;
+        background-color: #c09891;
     }
 
 input {
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 }
 
 button {
     margin-top: 5px;
 }
+
+form {
+    border: double #c09891 8px;
+    padding: 20px;
+    margin: 10px;
+    width: fit-content;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #33201c;
+    color:#bea8a7;
+}
+
+#submit {
+    margin-top: 5px;
+    border: double #775144 5px;
+    color: #2a0800;
+    border-radius: 4px;
+    background-color: #bea8a7;
+    font-family: 'Lugrasimo', cursive;
+}
+
+    #submit:hover {
+        cursor: pointer;
+        color: #33201c;
+        background-color: #c09891;
+    }
+
     /*
     #F4DBD8
     #BEA8A7

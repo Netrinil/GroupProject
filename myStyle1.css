@@ -24,7 +24,7 @@ a {
     }
 
 input{
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 }
 button{
     margin-top:5px;
@@ -49,6 +49,7 @@ label {
     color: #b8b4b6;
     border-radius: 4px;
     background-color: #541340;
+    font-family: 'Mochiy Pop One', sans-serif;
 }
     #submit:hover {
         cursor: pointer;
