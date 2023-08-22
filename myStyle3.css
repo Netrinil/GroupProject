@@ -1,5 +1,8 @@
-﻿body {
+﻿@import url('https://fonts.googleapis.com/css2?family=Handjet&family=Lugrasimo&family=Mochiy+Pop+One&display=swap');
+
+body {
     background-color: #0A1128;
+    font-family: 'Handjet', cursive;
     color: #FEFCFB;
     padding: 10px;
     margin: 10px;
