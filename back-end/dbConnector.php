@@ -27,6 +27,14 @@ function MyPagesAllGet($dbConn) {
 }
 // ///////////////////////////////////////////////////
 // Get all the page records
+function MyPagesGetAllUnapproved($dbConn)
+{
+    $query = "SELECT id, Title, Header1, Text1, ParentPage, isActive FROM Pages WHERE requireApproval = 1  order by ParentPage asc;";
+
+    return @mysqli_query($dbConn, $query);
+}
+// ///////////////////////////////////////////////////
+// Get all the page records
 function MyRecipesAllGet($dbConn, $userID)
 {
     $query = "SELECT * FROM Pages where (creator = " . $userID . " or isActive = 1 and requireApproval = 0) and ParentPage != 0 and ParentPage != 3 order by ParentPage asc;";

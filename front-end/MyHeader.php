@@ -88,6 +88,7 @@ if ($_SESSION["userID"] > 0) {
         echo '  &nbsp; &nbsp;<a href="pageRemove.php">Remove Page</a>';
         echo '  &nbsp; &nbsp;<a href="pageRestore.php">Restore Page</a>';
         echo '  &nbsp; &nbsp;<a href="pageUpdate.php">Update Page</a>';
+        echo '  &nbsp; &nbsp;<a href="ManagePages.php">Manage Pages</a>';
         echo '  &nbsp; &nbsp;<a href="ManageUsers.php">Manage Users</a>';
     }
     echo '  &nbsp; &nbsp;<a href="logout.php">Logout</a>';

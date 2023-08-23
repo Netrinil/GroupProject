@@ -22,6 +22,25 @@ function MenuDisplay($dataset)
     }
 
 }
+// //////////////////////////////////////////////////
+function ListDisplay($dataset)
+{
+    $myDbConn = ConnGet();
+
+    // &nbsp; &nbsp;<a href="ContactUs.php">
+
+    if ($dataset) {
+        // per.Fname, per.Lname, cel.Cell_Id, cel.CellNumber
+        while ($row = mysqli_fetch_array($dataset)) {
+            echo ' &nbsp; &nbsp; ' . $row['Title'] . ': &nbsp; &nbsp; <a href="../back-end/APIGetUnapprovedQuery.php?PageId=' . $row['id'] . '" ><button>Approve</button></a></ br>';
+        }
+    } // End if
+    else {
+        echo "No menu items<br />";
+        echo mysqli_error($myDbConn);
+    }
+
+}
 // /////////////////
 function PageDisplay($PageData)
 {
