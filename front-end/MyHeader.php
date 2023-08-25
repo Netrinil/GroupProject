@@ -94,6 +94,7 @@ if ($_SESSION["userID"] > 0) {
     echo '  &nbsp; &nbsp;<a href="logout.php">Logout</a>';
 } else {
     echo '  &nbsp; &nbsp;<a href="Login.php">Login</a>';
+    echo '  &nbsp; &nbsp;<a href="CreateAccount.php">Create Account</a>';
 }
 
 

@@ -124,7 +124,8 @@ function MyJoinJsonGet($dbConn)
 function AccountCreate($dbConn, $fName, $lName, $userId, $pswd)
 {
     $query = "INSERT INTO users (First_Name, Last_Name, UserId, Pswd, isAdmin, isActive)
-                Values('" . $fName . "', '" . $lName . "', '" . $userId . "', '" . $pswd . "','" . 0 . "','" . 1 . ");";
+                Values('" . $fName . "', '" . $lName . "', '" . $userId . "', '" . $pswd . "','" . 0 . "','" . 1 . "');";
+
     return @mysqli_query($dbConn, $query);
 }
 
